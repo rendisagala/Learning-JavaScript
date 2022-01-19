@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Text Node</title>
+  </head>
+
+  <body>
+    Rendi Anjuma Sagala
+    <!-- contoh text node (tidak ada tag) -->
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Text Node.png"
+        alt="Text Node.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Text"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Text</a
+      >
+      <img
+        src="img/Membuat Text Node.png"
+        alt="Membuat Text Node.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <!-- diatas -->
+    <script>
+      const text = document.body.firstChild;
+      console.log(text.wholeText);
+
+      //Membuat Text Node
+      const text2 = document.createTextNode("ini adalah node text");
+      document.body.appendChild(text2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Window</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Window.png"
+        alt="Window.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Window"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Window</a
+      >
+    </div>
+    <hr />
+    <p id="content"></p>
+    <p id="location"></p>
+    <script>
+      const content = document.getElementById("content");
+      const locationParagraph = document.getElementById("location");
+
+      const height = window.screen.height;
+      const width = window.screen.width;
+      const url = window.location; //sama dengan deklarasi variabel window (const)
+
+      content.textContent = `Window Size = width : ${width}, height : ${height}`;
+      locationParagraph.textContent = url;
+    </script>
+  </body>
+</html>
