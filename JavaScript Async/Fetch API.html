@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Fetch API</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Fetch API.png"
+        alt="Fetch API.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API</a
+      >
+      <img
+        src="img/Request.png"
+        alt="Request.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Request/Request</a
+      >
+      <img
+        src="img/Response.png"
+        alt="Response.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Response"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Response</a
+      >
+    </div>
+    <hr />
+    <form>
+      <label for="username">
+        Username :<input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password">
+        Password : <input type="password" id="password" name="password" />
+      </label>
+      <br />
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <h1 id="response"></h1>
+
+    <p>
+      Fetch API Tanpa Object Request =>
+      <a href="./Fetch API2.html" target="_blank" rel="noopener noreferrer"
+        >Link di Sini</a
+      >
+    </p>
+
+    <script>
+      function doLogin() {
+        const request = new Request("https://hookb.in/kx9yoPbNyDhBjzggjeJn", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+
+        //Promise<Response>
+        const response = fetch(request);
+
+        //response konversi ke json
+        response
+          .then((response) => response.json())
+          .then(function (json) {
+            document.getElementById("response").textContent = json.success;
+          })
+          .catch(function (json) {
+            document.getElementById("response").textContent = error;
+          });
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Promise Static Method</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Promise Method.png"
+        alt="Promise Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods</a
+      >
+      <img
+        src="img/Promise Static Method.png"
+        alt="Promise Static Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods</a
+      >
+    </div>
+    <hr />
+
+    <table>
+      <tr>
+        <td>Id :</td>
+        <td id="id"></td>
+      </tr>
+      <tr>
+        <td>Name :</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Price :</td>
+        <td id="price"></td>
+      </tr>
+    </table>
+
+    <script>
+      function getProduct(product) {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", `api/${product}.json`);
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(
+                `There is an Error while getting product with error status : ${ajax.status}`
+              );
+            }
+          };
+          ajax.send();
+        });
+      }
+
+      //Promise All (method)
+
+      const promise = Promise.all([
+        getProduct("product1"),
+        getProduct("product2"),
+        getProduct("product3"),
+      ]);
+
+      promise.then(function (products) {
+        console.log(products);
+      });
+
+      //Promise Any (method)
+
+      const promise2 = Promise.any([
+        getProduct("product1salah"),
+        getProduct("product2salah"),
+        getProduct("product3"),
+      ]);
+
+      promise2.then(function (products) {
+        console.log(products);
+      });
+    </script>
+  </body>
+</html>

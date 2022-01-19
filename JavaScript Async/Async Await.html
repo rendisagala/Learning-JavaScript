@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Async Await</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Async Await.png"
+        alt="Async Await.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Async.png"
+        alt="Async.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Await.png"
+        alt="Await.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Error Handler di Async Await.png"
+        alt="Error Handler di Async Await.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      {
+        //return Promise<string> normal
+
+        function getNamePromise() {
+          return new Promise(function (resolve, reject) {
+            resolve("Rendi Promise");
+          });
+        }
+
+        getNamePromise().then((name) => console.log(name));
+
+        //return async<sting>
+        async function getNameAsync() {
+          return "Rendi Promise in Async";
+        }
+
+        getNameAsync().then((name) => console.log(name));
+      }
+
+      {
+        //Await
+        //Promise<JSON Product>
+        function getProduct() {
+          const request = new Request("api/product.json", {
+            method: "GET",
+          });
+
+          const response = fetch(request);
+
+          return response.then((response) => response.json());
+        }
+
+        function getProductNamePromise() {
+          return new Promise(function (resolve, reject) {
+            getProduct()
+              .then((product) => resolve(product.name))
+              .catch((error) => resolve(`Product Not Found`));
+          });
+        }
+
+        getProductNamePromise().then((productName) => console.log(productName));
+
+        //jika dengan async
+
+        async function getProductNameAsync() {
+          const product = await getProduct();
+          return product.name;
+        }
+
+        getProductNameAsync().then((productName) => console.log(productName));
+
+        //error handler async
+        async function getProductNameAsync2() {
+          try {
+            const product = await getProduct();
+            return product.name;
+          } catch (error) {
+            return `Product Not Found`;
+          } finally {
+            return `Code Has Been Executed`; //finally bisa ditulis bisa tidak
+          }
+        }
+
+        getProductNameAsync2().then((productName) => console.log(productName));
+      }
+    </script>
+  </body>
+</html>

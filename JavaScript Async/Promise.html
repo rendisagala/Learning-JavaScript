@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Promise</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Apa itu Promise.png"
+        alt="Apa itu Promise.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a
+      >
+      <img
+        src="img/Promise State.png"
+        alt="Promise State.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      /*
+        const promise = new Promise(function (resolve, reject) {
+          resolve("Code Succesfully Added");
+
+          rejetct("There is an Error");
+        }); */
+
+      const promise = new Promise(function (resolve, reject) {
+        const ajax = new XMLHttpRequest();
+        ajax.open("GET", "api/product.json");
+        ajax.onload = function () {
+          if (ajax.status === 200) {
+            resolve(ajax.responseText);
+          } else {
+            reject(
+              `There is an Error while getting product with error status : ${ajax.responseText}`
+            );
+          }
+        };
+        ajax.send();
+      });
+
+      console.log(promise);
+    </script>
+  </body>
+</html>

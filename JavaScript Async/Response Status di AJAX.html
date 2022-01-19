@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Response Status di AJAX</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Response Status.png"
+        alt="Response Status.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status</a
+      >
+    </div>
+    <hr />
+    <h1 id="response"></h1>
+    <script>
+      function displayResponse(json) {
+        const header = document.getElementById("response");
+        header.textContent = [json.response, json.fullName];
+      }
+
+      const ajax = new XMLHttpRequest();
+      //   ajax.open("GET", "api/hello.json");
+      ajax.open("GET", "api/salah.json"); //sengaja biar error
+      ajax.addEventListener("load", function () {
+        if (ajax.status === 200) {
+          const json = JSON.parse(ajax.responseText);
+          displayResponse(json);
+        } else {
+          displayResponse({
+            response: `There is an Error Status ${ajax.status}`,
+          });
+        }
+      });
+
+      ajax.send();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : AJAX (Asynchronous Javascript and XML)</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Apa itu AJAX.png"
+        alt="Apa itu AJAX.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a
+      >
+      <img
+        src="img/Cara Kerja AJAX.png"
+        alt="Cara Kerja AJAX.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      const ajax = new XMLHttpRequest();
+      ajax.open("GET", "api/hello.json");
+
+      ajax.send();
+    </script>
+  </body>
+</html>

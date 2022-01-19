@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Promise Method</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Promise Method.png"
+        alt="Promise Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#instance_methods</a
+      >
+      <img
+        src="img/Promise Static Method.png"
+        alt="Promise Static Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods</a
+      >
+    </div>
+    <hr />
+
+    <table>
+      <tr>
+        <td>Id :</td>
+        <td id="id"></td>
+      </tr>
+      <tr>
+        <td>Name :</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Price :</td>
+        <td id="price"></td>
+      </tr>
+    </table>
+    <p>
+      PROMISE STATIC METHOD :
+      <a
+        href="./Promise Static Method.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        >PROMISE STATIC METHOD</a
+      >
+    </p>
+    <script>
+      function getProduct() {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", "api/product.json");
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(
+                `There is an Error while getting product with error status : ${ajax.status}`
+              );
+            }
+          };
+          ajax.send();
+        });
+      }
+
+      getProduct()
+        //.then() kalau promise berhasil
+        .then(function (response) {
+          return JSON.parse(response);
+        })
+        .then(function (json) {
+          document.getElementById("id").textContent = json.id;
+          document.getElementById("name").textContent = json.name;
+          document.getElementById("price").textContent = json.price;
+        })
+        //.catch() kalau promise gagal
+        .catch(function (error) {
+          document.getElementById("id").textContent = error;
+          document.getElementById("name").textContent = error;
+          document.getElementById("price").textContent = error;
+        })
+        //.finally() kalau promise berhasil atau gagal
+        .finally(function () {
+          console.log(`finally code has been executed`);
+        });
+    </script>
+  </body>
+</html>

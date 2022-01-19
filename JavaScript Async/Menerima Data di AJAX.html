@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Menerima Data di AJAX</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Menerima Data di AJAX.png"
+        alt="Menerima Data di AJAX.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event</a
+      >
+    </div>
+    <hr />
+    <h1 id="response"></h1>
+    <script>
+      const ajax = new XMLHttpRequest();
+      ajax.open("GET", "api/hello.json");
+      ajax.addEventListener("load", function () {
+        const json = JSON.parse(ajax.responseText);
+
+        const header = document.getElementById("response");
+        header.textContent = [json.response, json.fullName];
+      });
+
+      ajax.send();
+    </script>
+  </body>
+</html>

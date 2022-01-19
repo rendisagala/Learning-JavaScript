@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Callback</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Apa itu CallBack.png"
+        alt="Apa itu CallBack.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Async Method.png"
+        alt="Async Method.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <h1 id="header"></h1>
+    <script>
+      // setTImeout
+
+      const addElement = () => {
+        const header = document.createElement("h1");
+        header.textContent = "Rendi Anjuma Sagala";
+
+        document.body.appendChild(header);
+      };
+      setTimeout(addElement, 5000); //1000 milisec = 1 sec
+      //berarti dalam 5 detik akan dicallback addElement
+
+      console.log(`Program Selesai`);
+
+      //setInterval
+
+      const setTime = () => {
+        const headerr = document.getElementById("header");
+        headerr.textContent = new Date().toString();
+      };
+
+      setInterval(setTime, 1000);
+      //berarti setiap 1 detik akan dicallback setTime
+
+      console.log(`Program Selesai Lagi`);
+    </script>
+  </body>
+</html>

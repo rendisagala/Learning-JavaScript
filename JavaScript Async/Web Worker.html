@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Async : Web Worker</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Thread di JavaScript.png"
+        alt="Thread di JavaScript.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Web Worker.png"
+        alt="Web Worker.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API</a
+      >
+      <img
+        src="img/Diagram Web Worker.png"
+        alt="Diagram Web Worker.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Worker.png"
+        alt="Worker.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Worker"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Worker</a
+      >
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent</a
+      >
+    </div>
+    <hr />
+    <button id="buttonTask">Click Me!</button>
+    <script>
+      /*   function slowLog(total){
+      for (let i = 0; i < total; i++) {
+          console.info(i);
+      }
+  }
+
+  document.getElementById("buttonTask").onclick = function (){
+      console.info("Start");
+      slowLog(100000);
+      console.info("End");
+  }; */
+
+      //web worker agar pekerjaan diatas tidak terbebani thread utama
+      const worker = new Worker("script/worker.js");
+      worker.addEventListener("message", function (message) {
+        console.log(message.data);
+      });
+
+      document.getElementById("buttonTask").onclick = function () {
+        worker.postMessage(100000);
+      };
+    </script>
+  </body>
+</html>
