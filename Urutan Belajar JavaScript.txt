@@ -1,0 +1,8 @@
+URUTAN BELAJAR JAVASCRIPT
+1. JavaScript Dasar
+2. JavaScript Object Oriented Programming
+3. JavaScript Standard Library
+4. JavaScript Modules
+5. JavaScript Document Object Model (DOM)
+6. Todolist : Studi Kasus
+7. JavaScript Async
