@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Standard Library : Number</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Number.png"
+        alt="Number"
+        style="width: 400px; height: 100%"
+      /><a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number 
+    "
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+      </a>
+    </div>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Number Static Properties.png"
+        alt="Number Static Properties"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#s
+      tatic_properties"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#s
+        tatic_properties</a
+      >
+      <img
+        src="img/Number Static Method.png"
+        alt="Number Static Method"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#s
+      tatic_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#s
+        tatic_methods</a
+      >
+      <img
+        src="img/Number Instance Method.png"
+        alt="Number Instance Method"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/</a
+      >
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#i
+      nstance_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#i
+        nstance_methods</a
+      >
+    </div>
+
+    <hr />
+    <script>
+      //Number Dasar
+
+      const input = "12345";
+      const number = Number(input);
+
+      console.log(typeof input); //string
+      console.log(typeof number); //number
+      console.log(number); //12345
+      console.log(Number("tes")); //Nan
+
+      //contoh number static properties
+
+      console.log(Number.MIN_VALUE);
+      console.log(Number.MAX_VALUE);
+      console.log(Number.MIN_SAFE_INTEGER);
+      console.log(Number.MIN_SAFE_INTEGER);
+      console.log(Number.NaN);
+
+      const data = Number(`12345`);
+
+      //contoh Number Static Method
+
+      console.log(Number.isInteger(data)); //true
+      console.log(Number.isNaN(data)); //false
+
+      //contoh Number Instance Method
+
+      const value = Number(12345);
+      console.log(value.toString(2)); //jadi binary
+      console.log(value.toLocaleString("id-ID")); //format number Indonesia
+      console.log(value.toLocaleString("en-US")); //format number US
+    </script>
+  </body>
+</html>

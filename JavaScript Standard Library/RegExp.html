@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Standard Library : Regular Expression</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/RegExp.png"
+        alt="RegExp"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a
+      >
+      <img
+        src="img/RegExp Modifier.png"
+        alt="RegExp Modifier"
+        style="width: 400px; height: 100%"
+      />
+      <h2>Fitur Exp Lainnya</h2>
+      <p>
+        Assersions : indikasi awal dan akhir teks 
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions
+       
+    </p>
+        <p>
+        Character Classes : membedakan antara huruf dan angka 
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character
+        _Classes
+    </p></p>
+        Group dan Range : melakukan grouping atau range huruf atau angka 
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_a
+        nd_Ranges
+    </p></p>
+        Quantifiers : menentukan jumlah huruf atau angka 
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifie
+        rs
+      </p>
+      <img
+      src="img/RegExp di String.png"
+      alt="RegExp di String"
+      style="width: 400px; height: 100%"
+    />
+    </div>
+    <hr />
+    <script>
+        {
+            //Create RegExp
+
+            //membuat regexp bisa dilakukan dengan 3 cara
+            const regex1 = /rendi/;
+            const regex2 = new RegExp ("rendi");
+            const regex3 = new RegExp (/rendi/);
+        }
+        
+        console.log(` `);
+        
+        {
+            //RegExp Instance Method
+            //test regex
+
+            const name = "Rendi Anjuma Sagala Rendi Anjuma Rendi Sagala rendi";
+            const regex = /rendi/ig;
+
+            const result = regex.exec(name);
+            console.log(result);
+
+            const test = regex.test(name);
+            console.log(regex.exec("halo halo tes")); //null
+        
+        
+        }
+
+        console.log(` `);
+
+        {
+            const name = "rendi sagala\nRendi Anjuma\nCristiano Ronaldo\nsagala anjuma rendi"; //\n artinya enter
+            const regex1 = /^rendi/igm;
+            const regex2 = /sagala/ig;
+        
+        let result;
+        while((result = regex1.exec(name)) !== null){
+            console.log(result);
+        }
+        while((result = regex2.exec(name)) !== null){
+            console.log(result);
+        console.log(name);
+        
+        }
+        } 
+        
+        console.log(` `);
+
+        {
+          //advanced regex
+
+          const regex = /rend[aiueo]/ig;
+
+          const names = "rendi renda rende rendu rendo";
+
+          let result;
+        while((result = regex.exec(names)) !== null){
+            console.log(result);
+        }
+  
+        }
+    </script>
+  </body>
+</html>

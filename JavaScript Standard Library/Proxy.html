@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Standard Library : Proxy</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img src="img/Proxy.png" alt="Proxy" style="width: 400px; height: 100%" />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy</a
+      >
+      <img
+        src="img/Proxy Handler.png"
+        alt="Proxy Handler"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Proxy dan Handler.png"
+        alt="Proxy dan Handler"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      {
+        //Membuat Handler
+
+        const target = {};
+
+        const handler = {
+          get: function (target, property) {
+            return target[property];
+          },
+          set: function (target, property, value) {
+            target[property] = value;
+          },
+        };
+
+        //Membuat Proxy
+        const proxy = new Proxy(target, handler);
+        proxy.firstName = "Rendi";
+        proxy.lastName = "Sagala";
+
+        console.log(proxy.firstName);
+        console.log(proxy.lastName);
+        console.log(target);
+      }
+
+      console.log(` `);
+
+      {
+        // Log Handler
+
+        const target = {
+          currentDay: 17,
+          currentMonth: "December",
+          currentYear: 2021,
+        };
+
+        const handler = {
+          get: function (target, property) {
+            console.log(`Acces property : ${property}`);
+            return target[property];
+          },
+          set: function (target, property, value) {
+            console.log(`Acces property  ${property} : ${value}`);
+            target[property] = value;
+          },
+        };
+        const proxy = new Proxy(target, handler);
+        proxy.firstName = "Rendi";
+        proxy.lastName = "Sagala";
+
+        console.log(proxy.firstName);
+        console.log(proxy.lastName);
+        console.log(target);
+        console.log(proxy.currentDay + proxy.currentMonth + proxy.currentYear);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Standard Library : Set</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img src="img/Set.png" alt="Set" style="width: 400px; height: 100%" />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set</a
+      >
+      <img
+        src="img/Set Instance Method & Property.png"
+        alt="Set Instance Method & Property"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      {
+        //Set
+
+        const set = new Set();
+
+        set.add(`Rendi`);
+        set.add(`Rendi`);
+        set.add(`Anjuma`);
+        set.add(`Sagala`);
+
+        console.log(set); //outputnya tidak ada data yg duplikat
+
+        set.forEach((value) => console.log(`${value}`));
+      }
+    </script>
+  </body>
+</html>

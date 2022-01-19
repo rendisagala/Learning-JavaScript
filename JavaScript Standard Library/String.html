@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Standard Library : String</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/String.png"
+        alt="String"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a
+      >
+      <img
+        src="img/String Instance Method and Properties.png"
+        alt="String Instance Method and Properties"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#inst
+      ance_methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#inst
+        ance_methods</a
+      >
+    </div>
+    <hr />
+    <script>
+      const name = "Rendi Anjuma Sagala";
+
+      console.log(name.length); //spasi juga dihitung
+      console.log(name.toLowerCase(name)); //lowercase
+      console.log(name.toUpperCase(name)); //uppercase
+      console.log(name.split(" ")); //berarti setiap spasi merupakan pemisah
+      console.log(name.split("")); //berarti setiap huruf merupakan pemisah(termasuk spasi)
+
+      const input = "   input data       ";
+      console.log(input.trimEnd()); //menghapus data (trim,trimEnd,trimStart)
+      console.log(input.bold()); //bold
+    </script>
+  </body>
+</html>
