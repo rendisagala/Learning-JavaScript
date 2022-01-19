@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Modules : Alias</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Alias.png"
+        alt="Alias.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Alias di Export.png"
+        alt="Alias di Export.png"
+        style="width: 400px; height: 100%"
+      /><!----tidak direkomendasikan -->
+      <img
+        src="img/Alias di Import.png"
+        alt="Alias di Import.png"
+        style="width: 400px; height: 100%"
+      /><!----direkomendasikan -->
+    </div>
+    <hr />
+    <script type="module">
+      import { company, sum, Company } from "./scripts/multiple.js";
+
+      //alias
+      import {
+        company as perusahaan,
+        sum as total,
+        Company as Perusahaan,
+      } from "./scripts/multiple2.js";
+
+      console.log(`sekarang di ${company}`);
+      console.log(sum(90, 9));
+
+      const untan = new Company();
+
+      //alias
+      console.log(`sekarang di ${perusahaan}`);
+      console.log(total(90, 9));
+
+      const untan2 = new Perusahaan();
+    </script>
+  </body>
+</html>

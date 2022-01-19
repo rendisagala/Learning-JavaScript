@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Modules : Aggregating Modules</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Aggregating Modules.png"
+        alt="Aggregating Modules.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script type="module">
+      import {
+        Person,
+        sayHello,
+        sayGoodBye,
+        sum,
+      } from "./scripts/aggregate.js";
+
+      const person = new Person(`Rendi`);
+      person.sayHello(`Sagala`);
+
+      sayGoodBye(`Rendi`);
+      sayHello(`Rendi`);
+
+      console.log(sum(90, 9));
+    </script>
+  </body>
+</html>

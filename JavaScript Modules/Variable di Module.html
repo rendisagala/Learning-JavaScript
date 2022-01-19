@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Modules : Variable di Module</title>
+    <script type="module" src="./scripts/variable.js"></script>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Variable di Module.png"
+        alt="Variable di Module.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script type="module">
+      import { name } from "./scripts/variable.js";
+      import { name } from "./scripts/variable2.js";
+
+      console.log(name); //error name ada 2 (solusinya pakai alias)
+    </script>
+  </body>
+</html>
