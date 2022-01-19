@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : HTML Table Element</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/HTML Table Element.png"
+        alt="HTML Table Element.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement</a
+      >
+    </div>
+    <hr />
+    <table id="orderRevenue" border="1">
+      <caption>
+        Order Revenue
+      </caption>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>income</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>January</td>
+          <td>100.000.000</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>200.000.000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><b>Total</b></td>
+          <td>300.000.000</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+      const orderRevenue = document.getElementById("orderRevenue");
+      console.log(orderRevenue.caption);
+      console.log(orderRevenue.tHead);
+      console.log(orderRevenue.tBodies);
+      console.log(orderRevenue.tFoot);
+      console.log(orderRevenue.rows);
+    </script>
+  </body>
+</html>

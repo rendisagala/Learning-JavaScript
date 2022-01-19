@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Element</title>
+  </head>
+
+  <body>
+    <div
+      style="display: flex; width: 100%; height: 100%; flex-wrap: wrap"
+      class="haloha"
+    >
+      <img
+        src="img/Element.png"
+        alt="Element"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Element"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Element</a
+      >
+      <img
+        src="img/Element Property.png"
+        alt="Element Property"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Element#properties"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Element#properties</a
+      >
+      <img
+        src="img/Element Method.png"
+        alt="Element Method"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Element#methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Element#methods</a
+      >
+      <img
+        src="img/Membuat Element.png"
+        alt="Membuat Element"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement</a
+      >
+    </div>
+    <hr />
+    <h1 id="title"></h1>
+    <p id="description"></p>
+    <div class="content" id="content">
+      <h1>Belajar JavaScript DOM</h1>
+      <p>Selamat Belajar JavaScript DOM</p>
+    </div>
+    <div class="contentt" id="contentt"></div>
+    <script>
+      const title = document.getElementById("title");
+      title.textContent = `Belajar JavaScript DOM`;
+
+      const description = document.getElementById("description");
+      description.textContent = `Selamat Belajar JavaScript DOM`;
+
+      //Element Property
+      const content = document.getElementById("content");
+      console.log(content.id);
+      console.log(content.className);
+      console.log(content.tagName);
+
+      //Element Method
+      description.remove();
+      //atau bisa juga seperti ini
+      document.getElementById("title").remove();
+
+      //Membuat Element
+      const contentt = document.getElementById("contentt");
+      //create h1
+      const titlee = document.createElement("h1");
+      titlee.textContent = "ini ditambahkan pakai JAVASCRIPT";
+      contentt.appendChild(titlee);
+      //create p
+      const descriptionn = document.createElement("p");
+      descriptionn.textContent = "ini juga ditambahkan pakai JAVASCRIPT";
+      contentt.appendChild(descriptionn);
+
+      console.log(document.body);
+    </script>
+  </body>
+</html>

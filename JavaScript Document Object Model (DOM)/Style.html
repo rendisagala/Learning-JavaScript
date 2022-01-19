@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Style</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img src="img/Style.png" alt="Style" style="width: 400px; height: 100%" />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style</a
+      >
+      <img
+        src="img/Nama Style.png"
+        alt="Nama Style"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <input type="button" id="" value="blue" />
+    <input type="button" id="" value="red" />
+    <input type="button" id="" value="yellow" />
+    <div
+      id="canvas"
+      style="width: 200px; height: 200px; background-color: black"
+    ></div>
+    <input type="button" id="" value="black" />
+    <script>
+      const canvas = document.getElementById("canvas");
+      const buttons = document.querySelectorAll("input");
+
+      for (let button of buttons) {
+        button.onclick = function () {
+          canvas.style.backgroundColor = button.getAttribute("value");
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : NodeList</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/NodeList.png"
+        alt="NodeList.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList"
+      target="_blank"
+      rel="noopener noreferrer"
+      >https://developer.mozilla.org/en-US/docs/Web/API/NodeList</a
+    >
+    <img
+      src="img/Live vs Static Nodelist.png"
+      alt="Live vs Static Nodelist.png"
+      style="width: 400px; height: 100%"
+    />
+    <hr />
+    <ul id="menu1">
+      <li id="first">Satu</li>
+      <li id="second">Dua</li>
+      <li id="third">Tiga</li>
+    </ul>
+
+    <ul id="menu2">
+      <li>Rendi</li>
+      <li>Anjuma</li>
+      <li>Sagala</li>
+    </ul>
+    <script>
+      const list = document.querySelectorAll("li");
+      console.log(list);
+
+      const menu1 = document.getElementById("menu1").childNodes;
+      console.log(menu1);
+
+      const menu2 = document.getElementById("menu2").childNodes;
+      console.log(menu2);
+
+      console.log(` `);
+
+      //NodeList Live
+      {
+        const menu1 = document.getElementById("menu1");
+        const list = menu1.childNodes;
+
+        menu1.appendChild(document.createElement("li"));
+        menu1.appendChild(document.createElement("li"));
+
+        console.log(list);
+      }
+
+      console.log(` `);
+
+      //NodeList Static
+      {
+        const list = document.querySelectorAll("li");
+
+        const menu1 = document.getElementById("menu1");
+        menu1.appendChild(document.createElement("li"));
+        menu1.appendChild(document.createElement("li"));
+
+        console.log(list);
+      }
+    </script>
+  </body>
+</html>

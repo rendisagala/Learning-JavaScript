@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Query Selector</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Query Selector.png"
+        alt="Query Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Pola Query Selector.png"
+        alt="Pola Query Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a
+      >
+      <img
+        src="img/Universal Selector.png"
+        alt="Universal Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors</a
+      >
+      <img
+        src="img/Type Selector.png"
+        alt="Type Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors</a
+      >
+      <img
+        src="img/Class Selector.png"
+        alt="Class Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors</a
+      >
+      <img
+        src="img/ID Selector.png"
+        alt="ID Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors</a
+      >
+      <img
+        src="img/Attribute Selector.png"
+        alt="Attribute Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a
+      >
+      <img
+        src="img/Operator di Attribute Selector.png"
+        alt="Operator di Attribute Selector.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax</a
+      >
+      <img
+        src="img/Dan Selector Lainnya.png"
+        alt="Dan Selector Lainnya.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a
+      >
+    </div>
+    <hr />
+    <p>This is a Text</p>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+    <ul>
+      <li>Four</li>
+      <li>Five</li>
+    </ul>
+
+    <ul>
+      <li class="menuItem">1</li>
+      <li>2</li>
+      <li class="menuItem">3</li>
+    </ul>
+
+    <ul>
+      <li class="menuItemss">1</li>
+      <li id="menu2">2</li>
+      <li class="menuItemss">3</li>
+    </ul>
+
+    <div class="rendi"></div>
+    <div class="anjuma"></div>
+    <div class="sagala"></div>
+
+    <div class="rendi"></div>
+    <div class="rendianjuma"></div>
+    <div class="rendisagala"></div>
+    <script>
+      {
+        //Universal Selector
+        const elements = document.querySelectorAll("*");
+        console.log(elements);
+      }
+
+      console.log(` `);
+
+      {
+        //Type Selector
+
+        const list = document.querySelectorAll("li");
+        console.log(list);
+      }
+
+      console.log(` `);
+
+      {
+        //Class Selector
+
+        const menuItems = document.querySelectorAll(".menuItem"); //bisa juga ("li.menuItem")
+        console.log(menuItems);
+      }
+
+      console.log(` `);
+
+      {
+        //ID Selector
+
+        const menu2 = document.querySelectorAll("#menu2");
+        console.log(menu2);
+      }
+
+      console.log(` `);
+
+      {
+        //Attribute Selector
+
+        const list = document.querySelectorAll("div[class]"); //berarti semua div yang memiliki attribute class
+        console.log(list);
+
+        const list2 = document.querySelectorAll("[class]"); //semua element yang ber-attribute class
+        console.log(list2);
+
+        //Operator di Attribute Selector
+
+        const list3 = document.querySelectorAll("[class^=rendi]"); //semua class yang berawalan rendi
+        console.log(list3);
+
+        //LENGKAP LIHAT DI WEB
+      }
+    </script>
+  </body>
+</html>

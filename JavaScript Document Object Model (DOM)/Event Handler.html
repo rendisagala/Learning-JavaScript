@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Event Handler</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Event Handler.png"
+        alt="Event Handler.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/EventTarget</a
+      >
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a
+      >
+      <img
+        src="img/Event Target.png"
+        alt="Event Target.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/EventTarget</a
+      >
+      <img
+        src="img/Global Event Handler.png"
+        alt="Global Event Handler.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a
+      >
+    </div>
+    <hr />
+    <input id="clickMe" type="button" value="Click Me!" /> <br /><br />
+    <input id="clickMe2" type="button" value="Click Me! 2" />
+    <script>
+      //Event Target
+
+      const button = document.getElementById("clickMe");
+      button.addEventListener("click", function () {
+        button.setAttribute("value", "You Already Click Me!");
+      });
+      button.addEventListener("click", function () {
+        console.log(`Button di Click!`);
+      });
+
+      //Global Event Handler
+      {
+        const button = document.getElementById("clickMe2");
+        button.onclick = function () {
+          button.setAttribute("value", "You Already Click Me!");
+        }; //cuman bisa 1 kali perintah
+      }
+    </script>
+  </body>
+</html>

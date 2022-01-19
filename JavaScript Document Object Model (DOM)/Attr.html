@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Attr</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Attr.png"
+        alt="Attr.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Attr"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Attr</a
+      >
+      <img
+        src="img/Attr Value.png"
+        alt="Attr Value.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Membuat Attr.png"
+        alt="Membuat Attr.png"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <img
+      id="logo"
+      src="https://www.programmerzamannow.com/img/pzn.png"
+      alt="PZN Logo"
+    />
+    <img id="logo2" />
+    <script>
+      const logo = document.getElementById("logo");
+
+      // const src = logo.getAttributeNode("src");
+      const src = logo.getAttribute("src");
+      console.log(src);
+
+      // console.log(src.name);
+      // console.log(src.value);
+
+      //Membuat Attr
+      {
+        const logo = document.getElementById("logo2");
+
+        // const src = document.createAttribute("src");
+        // src.value = "https://www.programmerzamannow.com/img/pzn.png";
+
+        //kalau mau langsung
+
+        logo2.setAttribute(
+          "src",
+          "https://www.programmerzamannow.com/img/pzn.png"
+        );
+        console.log(src);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Node</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Node.png"
+        alt="Node.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Node"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Node</a
+      >
+      <img
+        src="img/Node Property.png"
+        alt="Node Property.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Node#properties"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Node#properties</a
+      >
+      <img
+        src="img/Node Method.png"
+        alt="Node Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Node#properties"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Node#methods</a
+      >
+    </div>
+    <hr />
+    <ul id="menu">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+      <li id="hilang">hilang</li>
+    </ul>
+    <script>
+      const menu = document.getElementById("menu");
+      console.log(menu);
+
+      const first = document.getElementById("first");
+      console.log(first);
+
+      console.info(` `);
+
+      //node property
+      console.log(menu.childNodes);
+      console.log(menu.textContent);
+      console.log(second.textContent);
+      console.log(second.previousSibling.previousSibling);
+      console.log(second.nextSibling.nextSibling);
+
+      //node method
+      menu.removeChild(document.getElementById("first")); //hilang yg first di html (output)
+      menu.removeChild(document.getElementById("hilang")); //hilang yg first di html (output)
+    </script>
+  </body>
+</html>

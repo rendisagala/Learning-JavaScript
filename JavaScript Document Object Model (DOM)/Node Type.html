@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Node Type</title>
+  </head>
+
+  <body>
+    Rendi Anjuma Sagala
+    <!-- INI KOMENTAR -->
+
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Node Type.png"
+        alt="Node Type.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType</a
+      >
+      <img
+        src="img/Tabel Node Type.png"
+        alt="Tabel Node Type.png"
+        style="width: 500px; height: 100%"
+      />
+    </div>
+    <hr />
+
+    <script>
+      const nodes = document.body.childNodes;
+      for (const node of nodes) {
+        console.log(`${node} : ${node.nodeType}`);
+      }
+    </script>
+  </body>
+</html>

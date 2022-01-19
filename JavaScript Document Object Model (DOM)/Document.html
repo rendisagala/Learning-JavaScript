@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : Document</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Document.png"
+        alt="Document.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Document"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Document</a
+      >
+      <img
+        src="img/Document Object.png"
+        alt="Document Object.png"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Document Property.png"
+        alt="Document Property.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Document#properties"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Document#properties
+      </a>
+      <img
+        src="img/Document Method.png"
+        alt="Document Method.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Document#methods"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/Document#methods</a
+      >
+    </div>
+    <hr />
+    <div class="">
+      <p id="tulisan">Ini adalah tulisan</p>
+    </div>
+    <script>
+      console.log(document);
+
+      //document property
+      console.log(document.title);
+      console.log(document.head);
+      console.log(document.body);
+      console.log(document.images);
+      console.log(document.contentType);
+
+      //document method
+      const tulisan = document.getElementById("tulisan");
+      console.log(tulisan);
+    </script>
+  </body>
+</html>

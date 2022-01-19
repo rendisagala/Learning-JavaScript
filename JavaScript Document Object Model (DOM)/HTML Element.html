@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Document Object Model (DOM) : HTML Element</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/HTML Element.png"
+        alt="HTML Element.png"
+        style="width: 400px; height: 100%"
+      />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement</a
+      >
+    </div>
+    <hr />
+    <a id="link"></a>
+    <script>
+      const link = document.getElementById("link");
+      link.href = "https://www.google.com"; //tidak perlu menggunakan getAttribute dan setAttribute
+      link.target = "_blank";
+      link.textContent = "Link Google";
+    </script>
+  </body>
+</html>
