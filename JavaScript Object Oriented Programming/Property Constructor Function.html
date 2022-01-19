@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Property COnstructor Function</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Property Constructor Function.png" alt="Property Constructor Function" style="width: 400px; height:100% ;">
+    </div>
+    <hr>
+    <script>
+        //property di constructor Function
+        function Person() {
+            this.firstName = "";
+            this.lastName = "";
+        }
+        const rendi = new Person();
+        rendi.firstName = "Rendi";
+        const cristiano = new Person();
+        cristiano.lastName = "Ronaldo";
+
+        console.log(rendi);
+        console.log(cristiano);
+    </script>
+</body>
+
+</html>

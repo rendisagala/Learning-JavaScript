@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT OOP Static Class Field</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Kata Kunci Static.png"
+        alt="Kata Kunci Static"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Static Class Field.png"
+        alt="Static Class Field"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      //Static Class Field
+
+      class Configuration {
+        static name = "Belajar JavaScript OOP";
+        static version = 1.0;
+        static author = "Rendi Sagala";
+      }
+
+      const config = new Configuration();
+      console.log(config);
+      console.log(config.name); //undefined
+
+      //cara mengakses static class field
+      console.log(Configuration.name);
+      console.log(Configuration.version);
+      console.log(Configuration.author); //jadi harus tulis nama classnya dulu
+
+      //bisa juga dirubah
+
+      Configuration.author = "Anjuma";
+
+      console.log(Configuration.author);
+    </script>
+  </body>
+</html>

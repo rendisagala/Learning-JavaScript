@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT OOP Membuat Class Error</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Membuat Class Error Manual.png"
+        alt="Membuat Class Error Manual"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      //Class ValidationError
+
+      class ValidationError extends Error {
+        constructor(message, field) {
+          super(message);
+          this.field = field;
+        }
+      }
+
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            //Menggunakan ValidationError
+            throw new ValidationError(
+              "Total Parameter harus lebih dari 0",
+              "numbers"
+            );
+          }
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+
+          return total;
+        }
+      }
+      try {
+        console.log(MathUtil.sum());
+        console.log("Rendi");
+      } catch (error) {
+        if (error instanceof ValidationError) {
+          console.log(
+            `Terjadi error di field ${error.field} dengan error ${error.message}`
+          );
+        } else {
+          console.log(`Terjadi error : ${error.message}`);
+        }
+      } finally {
+        console.log(`Program Selesai`); //kata kunci finally (akan selalu dieksekusi walaupun error)
+      }
+
+      console.log("Rendi");
+    </script>
+  </body>
+</html>

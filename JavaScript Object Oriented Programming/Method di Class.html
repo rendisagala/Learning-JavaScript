@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT OOP Method di Class</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Method di Class.png"
+        alt="Method di Class"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      //Method di Class
+
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        sayHello(name) {
+          console.log(`Hi ${name}, my name is ${this.name}`);
+        }
+      }
+
+      const rendi = new Person("Rendi");
+      console.log(rendi);
+      console.log(`Hello ${rendi.name}`);
+
+      rendi.sayHello("Cristiano");
+    </script>
+  </body>
+</html>

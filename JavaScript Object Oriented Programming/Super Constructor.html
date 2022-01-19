@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Super Constructor</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Super Constructor.png" alt="Super Constructor" style="width: 400px; height:100% ;">
+    </div>
+    <hr>
+    <script>
+        //Super Constructor
+
+        class Employee {
+
+            constructor(firstName) {
+                this.firstName = firstName;
+            }
+
+            sayHello(name) {
+                console.log(`Hi ${name}, my name is Employee ${this.firstName}`);
+            }
+        };
+
+        class Manager extends Employee {
+            constructor(firstName, lastName) {
+                super(firstName); //memanggil constructor parent
+                this.lastName = lastName;
+            }
+            sayHello(name) {
+                console.log(`Hi ${name}, my name is Manager ${this.firstName} ${this.lastName}`);
+            }
+        };
+
+        const cristiano = new Employee("Cristiano");
+        cristiano.sayHello("Rendi");
+
+        const rendi = new Manager("Rendi", "Sagala");
+        rendi.sayHello("Cristiano");
+
+        //cek
+        console.log(cristiano);
+        console.log(rendi);
+    </script>
+</body>
+
+</html>

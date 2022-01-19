@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Prototype</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Prototype.png" alt="Prototype" style="width: 400px; height:100% ;">
+        <img src="img/Prototype Inheritance.png" alt="Prototype Inheritance" style="width: 400px; height:100% ;">
+        <img src="img/Diagram Prototype.png" alt="Diagram Prototype" style="width: 400px; height:100% ;">
+        <img src="img/Menambah Property ke Prototype.png" alt="Menambah Property ke Prototype" style="width: 400px; height:100% ;">
+        <img src="img/Cara Kerja Prototype Inheritance.png" alt="Cara Kerja Prototype Inheritance" style="width: 400px; height:100% ;">
+    </div>
+    <hr>
+    <script>
+        //buat object instance
+
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function(name) {
+                console.log(`Hello ${name}, my name is ${this.firstName} ${this.lastName}`)
+            }
+        }
+        //menambah property ke prototype
+
+        Person.prototype.goodLuck = function() {
+            console.log(`Good Luck`);
+        };
+
+        Person.prototype.run = function() {
+            console.log(`${this.firstName} is running`);
+        };
+        //yg diatas nnti tampilnya di prototype (di console)
+
+        const rendi = new Person("Rendi", "Sagala");
+        const cristiano = new Person("Cristiano", "Ronaldo");
+
+        console.log(rendi);
+        console.log(cristiano);
+
+        //mengakses prototype dari instance object
+        rendi.goodLuck();
+        rendi.run();
+
+        //bisa juga mengubah value prototype tersebut
+        rendi.goodLuck = function() {
+            console.log(`Semoga Beruntung, ${this.firstName}!`);
+        }
+        rendi.goodLuck();
+    </script>
+</body>
+
+</html>

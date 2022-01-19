@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT OOP Operator instanceof</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Operator instanceof.png"
+        alt="Operator instanceof"
+        style="width: 400px; height: 100%"
+      />
+      <img
+        src="img/Operator instanceof di Class Inheritance.png"
+        alt="Operator instanceof di Class Inheritance"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      //Operator instanceof
+
+      class Employee {}
+
+      class Manager {}
+
+      const cristiano = new Employee();
+      const rendi = new Manager();
+
+      //kalau pakai typeof
+      console.log(typeof cristiano);
+      console.log(typeof rendi); //hasilnya object
+
+      //kalau pakai instanceof
+      console.log(cristiano instanceof Employee); //true
+      console.log(cristiano instanceof Manager); //false
+
+      console.log(rendi instanceof Manager); //true
+      console.log(rendi instanceof Employee); //false
+
+      console.log(` `);
+
+      //Operator instanceof di Inheritance
+      {
+        class Employee {}
+
+        class Manager extends Employee {}
+
+        const cristiano = new Employee();
+        const rendi = new Manager();
+
+        //instanceof
+        console.log(cristiano instanceof Employee); //true
+        console.log(cristiano instanceof Manager); //false
+
+        console.log(rendi instanceof Manager); //true
+        console.log(rendi instanceof Employee); //true  (berubah)
+      }
+    </script>
+  </body>
+</html>

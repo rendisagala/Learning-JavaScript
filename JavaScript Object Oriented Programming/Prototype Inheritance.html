@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Prototype Inheritance</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Prototype Inheritance2.png" alt="Prototype Inheritance2.png" style="width: 400px; height:100% ;">
+        <img src="img/Diagram Prototype Inheritance Salah.png" alt="Diagram Prototype Inheritance Salah.png" style="width: 400px; height:100% ;">
+        <img src="img/Diagram Prototype Inheritance Benar.png" alt="Diagram Prototype Inheritance Benar.png" style="width: 400px; height:100% ;">
+    </div>
+    <hr>
+    <script>
+        //contoh prototype inheritance yg salah
+        function Employee(name) {
+            this.name = name;
+        }
+
+        function Manager(name) {
+            this.name = name;
+        }
+
+        // Manager.prototype = Employee.prototype; //disini yg salah
+        //sama saja yg manajer prototype diubah ke employee
+
+        //YANG BENAR
+        Manager.prototype = Object.create(Employee.prototype); //fixed
+
+
+        Employee.prototype.sayHello = function(name) {
+            console.log(`Hello ${name}, my name is Employee ${this.name}`);
+        };
+        Manager.prototype.sayHello = function(name) {
+            console.log(`Hello ${name}, my name is Manager ${this.name}`);
+        };
+
+        const employee = new Employee("Cristiano");
+        employee.sayHello("Leo");
+
+        const manager = new Manager("Rendi");
+        manager.sayHello("Leo");
+
+        //cek
+        console.log(employee);
+        console.log(manager);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT OOP Private Class Field</title>
+  </head>
+
+  <body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap">
+      <img
+        src="img/Private Class Field.png"
+        alt="Private Class Field"
+        style="width: 400px; height: 100%"
+      />
+    </div>
+    <hr />
+    <script>
+      //Private Class Field
+
+      class Counter {
+        #counter = 0; //tambahin # agar menjadi private
+
+        increment() {
+          this.#counter++;
+        }
+
+        decrement() {
+          this.#counter--;
+        }
+
+        get() {
+          return this.#counter;
+        }
+      }
+
+      const counter = new Counter();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment(); //harapannya outputnya 5
+
+      console.log(counter.get()); //output error karena #counter private
+      console.log(counter);
+
+      // counter.#counter = 100 //error, private class tidak bisa diubah diluar parent class
+    </script>
+  </body>
+</html>

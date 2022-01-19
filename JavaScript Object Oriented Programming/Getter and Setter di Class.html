@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Getter dan Setter di Class</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Getter and Setter di Class.png" alt="Getter and Setter di Class" style="width: 400px; height:100% ;">
+    </div>
+    <hr>
+    <script>
+        //Getter dan Setter
+
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            get fullName() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+
+
+
+            set fullName(value) {
+                const result = value.split(" ");
+                this.firstName = result[0];
+                this.lastName = result[1];
+            }
+        };
+
+        const rendi = new Person("Rendi", "Sagala");
+
+        console.log(rendi);
+        console.log(rendi.fullName);
+
+        rendi.fullName = "Cristiano Ronaldo"; //bisa dirubah
+        console.log(rendi);
+        console.log(rendi.fullName);
+    </script>
+</body>
+
+</html>

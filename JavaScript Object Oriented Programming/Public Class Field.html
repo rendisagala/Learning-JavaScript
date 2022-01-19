@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT OOP Public Class Field</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 100%; height: 100%; flex-wrap: wrap;">
+        <img src="img/Class Field.png" alt="Class Field" style="width: 400px; height:100% ;">
+        <img src="img/Public Class Field.png" alt="Public Class Field" style="width: 400px; height:100% ;">
+    </div>
+    <a href="https://github.com/tc39/proposal-class-fields" target="_blank" rel="noopener noreferrer">https://github.com/tc39/proposal-class-fields</a>
+    <hr>
+    <script>
+        //Public Class Field
+
+        class Customer {
+            //ini adalah public field
+            firstName;
+            lastName;
+            balance = 0;
+            //bisa ditambah constructor
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            sayHello(name) {
+                console.log(`Hello ${this.firstName} ${this.lastName}, Welcome to Our Store`);
+            }
+        }
+
+        const rendi = new Customer("Rendi", "Sagala");
+        console.log(rendi);
+        rendi.sayHello();
+    </script>
+</body>
+
+</html>
